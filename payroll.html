@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>給与計算</title>
+</head>
+
+<body>
+
+  <p>
+    売上　-　経費　＝　利益　(それぞれ7ケタまで)
+  </p>
+  <p>
+    <input type="text" id="uriage" placeholder="売上を入力" size="9" maxlength="7"> -
+    <input type="text" id="keihi" placeholder="経費を入力" size="9" maxlength="7"> =
+    <hr id="rieki">
+  </p>
+  <br>
+  <p>
+    当日分の取り分
+    <input type="text" id="toribunn" size="3" maxlength="3"> %
+    <br>
+    当日の分配合計
+    <hr id="touzitu_toribunn">
+  </p>
+
+  <p>
+    事前準備の分配合計
+    <hr id="zyunnbi_toribunn">
+  </p>
+
+  <p>
+    メンバーを追加
+    <input type="text" id="membername" placeholder="メンバー名を入力">
+    <br>
+    <button id="addmember">追加する</button>
+  </p>
+  <table id="memberstable" border="1">
+    <tr>
+      <th>id</th>
+      <th>メンバー名</th>
+      <th>勤務合計時間</th>
+      <th>当日分給与</th>
+      <th>準備分給与</th>
+      <th>給与</th>
+    </tr>
+  </table>
+  <button id="edit_memberstable">表を編集</button>
+  <button id="save_memberstable">保存</button>
+  <table id="editing_table"></table>
+  <br>
+  <div><span id="autocalctext">自動計算をオフにする</span><input type="checkbox" id="autocalc" checked></div>
+  
+  <br>
+  <button id="calc">計算する</button>
+
+  <script src="payroll.js"></script>
+</body>
+
+</html>
